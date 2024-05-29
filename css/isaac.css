@@ -1,0 +1,274 @@
+#isaacWiki{
+  display: block;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  font-family: isaac;
+}
+#smokeIsaac{
+  position: fixed;
+  width: 200px;
+  top: 60px;
+  right: 10px;
+  margin-top: -130px;
+}
+#isaacDrip{
+  position: fixed;
+  width: 100px;
+  transform: scaleX(-1);
+  bottom: 0;
+  right: 10px;
+}
+
+.input-container {
+  position: relative;
+  margin-top: 50px;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 30%;
+}
+.input-container input[type="text"] {
+  font-size: 20px;
+  font-family: Comic Sans MS;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px 0;
+  background-color: transparent;
+  outline: none;
+  color: white;
+}
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-family: Comic Sans MS;
+  font-size: 13px;
+}
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: white;
+}
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+  transform: scaleX(1);
+}
+
+/**BUSCADOR DE OBJETOS ESTILO DEL DESPLEGABLE**/
+#objects{
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 30%;
+  height: 400px;
+  z-index: 10;
+  color: white;
+  overflow: auto;
+}
+.hijo{
+  display: grid;
+  background-color: grey;
+  grid-template-columns: 10% 88%;
+  border-bottom: 1px solid white;
+  width: 99%;
+  height: 90px;
+}
+.hijo:hover{
+  color: black;
+  background-color: white;
+}
+#imagenSelect{
+  width: 80px;
+  height: 80px;
+}
+
+/**ESTILO DEL DIV QUE SE MUESTRA AL ELEGIR EL OBJETO**/
+#vista{
+  display: grid;
+  grid-template-columns: 600px 800px;
+}
+
+#imagenContenedor{
+  margin-left: 10%;
+  width: 430.5px;
+  height: 1158px;
+  z-index: 1;
+  background-image: url("/photos/contenedor_objeto.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+/**ESTILO DEL CONTENEDOR DONDE SE MUESTRA LA INFORMACION**/
+#contenedor{
+  margin: auto;
+  position: relative;
+  width: 360px;
+  height: 1000px;
+  display: grid;
+  /**margin-left: 10%;**/
+  z-index: 1;
+}
+
+/**ESTILO DE LA IMAGEN DEL OBJETO QUE ESTA DENTRO DEL CONTENEDOR**/
+#imagen{
+  margin-left: 20px;
+  z-index: 0;
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  animation-name: objeto;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+}
+
+/**ESTILO DE LA IMAGEN DEL PEDESTAL**/
+#pedestal{
+  margin-top: 100px;
+  position: static;
+  width: 200px;
+  height: 200px;
+}
+
+/**ANIMACION DEL OBJETO**/
+@keyframes objeto{
+  0%{margin-top: 10px;}50%{margin-top: 20px;}100%{margin-top: 10px;}
+}
+
+#divPedestal{
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  height: 300px;
+  border-bottom: 1px solid #CAACA4;
+  /**background-color: #E9DADF;**/
+}
+#divImagenPersonaje2{
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+}
+#divNombre{
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  /**border-bottom: 1px solid black;**/
+  padding-top: 25px;
+  /**background-color: #FF4B4B;**/
+}
+ #divInfo{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  /**border-bottom: 1px solid black;**/
+  border-bottom-width: 50%;
+  padding-top: 25px;
+ }
+#divImagenPersonaje{
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  /**border-bottom: 1px solid black;**/
+  /**padding-top: 25px;**/
+  /**background-color: #FF4B4B;**/
+}
+#divInformacion{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #CAACA4;
+}
+#nombreObjeto{
+  font-size: 40px;
+  font-family: isaac;
+}
+#info, #divImagenPersonaje > label{
+  font-size: 30px;
+  font-family: isaac;
+}
+#divType, #divId, #divCalidad, #divPool, #divRealice{
+  width: 100%;
+  display: grid;
+  padding-top: 20px;
+  /**border-bottom: 1px solid black;**/
+  /**padding-bottom: 20px;**/
+  /**background-color: #E9DADF;**/
+}
+#divRealice{
+  padding-bottom: 20px;
+}
+#divType > span, #divId > span, #divCalidad > span, #divPool > span, #divRealice > span{
+  /**margin-left: 10px;**/
+  font-size: 28px;
+  font-family: isaac;
+}
+#divType > label, #divId > label, /**#divCalidad > label,**/ #divPool > label, #divRealice > label{
+  /**margin-left: 15px;**/
+  font-size: 17px;
+  font-family: Andale Mono, monospace;
+}
+#personaje{
+  position: static;
+  /**margin-bottom: 20px;**/
+}
+#texto{
+  margin: 30px 0px 0px 0px;
+  font-size: 130%;
+  font-family: isaac;
+  text-align: center;
+}
+#description{
+  margin-top: 20px;
+  position: relative;
+  margin-left: 2%;
+  z-index: 1;
+  color: white;
+}
+#description span{
+  font-size: 50px;
+  font-family: isaac;
+}
+#description label{
+  display: block;
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: Andale Mono, monospace;
+}
+body{
+  background-image: url("/photos/basement2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+form{
+  margin-bottom: 0px;
+}
+@font-face {
+  font-family: 'isaac';
+  src: url('/css/fonts/upheavtt.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+#labelCalidad{
+  font-size: 40px;
+  font-family: isaac;
+  font-weight: bold;
+}
